@@ -1,3 +1,14 @@
-print ("hola mundo")
-print ("Escriu la teva edat")
-input ()
+print ("Hola mundo")
+print ("Quin es el teu nom?")
+nom=input ("Àlex")
+
+num=1
+print (num)
+num=2.5
+print (num)
+num="ups"
+print (num)
+
+print ("Quina es la teva edat?")
+edat=input ("67")
+print ("Te llamas", nom, "y tienes", edat, "años")
