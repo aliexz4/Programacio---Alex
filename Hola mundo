@@ -1,14 +1,21 @@
 print ("Hola mundo")
-print ("Quin es el teu nom?")
-nom=input ("Àlex")
 
+
+#Canvi instani de variables
+'''
 num=1
-print (num)
+print(num,",",type(num))
 num=2.5
-print (num)
-num="ups"
-print (num)
+print(num,",",type(num))
+print'ups'
+print(num,",",type(num))
+'''
 
-print ("Quina es la teva edat?")
-edat=input ("67")
-print ("Te llamas", nom, "y tienes", edat, "años")
+
+#No cal escriure un print abans d'un input (pot estar tot dins)
+
+
+#Asi se usa el input para pedir datos al usuario
+nom=input ("Com et dius?")
+year=input ("Cuando nacistes?")
+print ("Te llamas", nom, "y tienes", str(2026 - int(year)), "años")
