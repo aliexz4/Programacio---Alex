@@ -1,1 +1,16 @@
+num1 = input ("Escriu un numero: ")
+num2 = input ("Escriu un altre numero: ")
 
+print ("La suma dels dos numeros es:", str(int(num1) + int(num2)))
+print ("La resta dels primer numero i el segon es:", str(int(num1) - int(num2)))
+print ("La resta del segon numero i el primer es:", str(int(num2) - int(num1)))
+
+print ("La potencia del primer elevat al segon es:", str(int(num1) ** int(num2)))
+print ("La potencia del segon elevat al primer es:", str(int(num2) ** int(num1)))
+print ("La multiplicacio dels dos numeros es:", str(int(num1) * int(num2)))
+
+print ("La divisió del primer pel segon nombres es:", str(int(num1) / int(num2)))
+print ("La divisió del segon i el primer es:", str(int(num2) / int(num1)))
+
+print ("El residu de la divisió del primer pel segon es:", str(int(num1) % int(num2)))
+print ("El residu de la divisió del segon pel primer es:", str(int(num2) % int(num1)))
