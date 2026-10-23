@@ -1,1 +1,33 @@
+#Para separar parragrafs
+print("")
 
+
+#Numeros
+n1=int(input ("Escriu un numero: "))
+n2=int(input ("Escriu un altre numero: "))
+suma=n1+n2
+
+#Las claus ({}) se usan para definir comienzo y final
+if(suma>10): {
+    print("La seva suma és més gran que 10")
+}
+else: {
+    print("La seva suma és més petita que 10")
+}
+
+#El or se usa para decir "o"
+if(suma>8 or suma<4): {
+    print("La seva suma és més gran que 8 o més petita que 4")
+}
+
+
+
+
+
+
+#Simplificació de l'if
+'''
+if(suma>10): print("La seva suma és més gran que 10
+'''
+
+print("")
