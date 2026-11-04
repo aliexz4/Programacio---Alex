@@ -1,1 +1,36 @@
+print ("")
 
+llista = [2, "Hola", 3.5]
+print (llista [0])
+print (llista [1])
+print (llista [2])
+
+#Llista amb llistes dins
+matriu = [[1, 11, 111], [2, 22, 222]]
+print (matriu [1][2])
+print (matriu [0])
+
+#LEN longitud de la llista
+print (len(llista))
+print (len(matriu))
+
+#Concatenar llistes
+llista=llista + [4, 6, 9]
+print (llista)
+
+#Parts d'una llista
+print (llista [1:3])
+
+#Reasignar un valor de la llista
+llista [2] = "Gat"
+print (llista)
+
+# Eliminar [Delete]
+del llista [2]
+print (llista)
+
+# Esborrar el contigut deixant la "caixa"
+llista [2] = ""
+print (llista)
+
+print ("")
