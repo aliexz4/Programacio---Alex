@@ -33,4 +33,35 @@ print (llista)
 llista [2] = ""
 print (llista)
 
+
+
+'''
+PROGRAMA DNI - Comprova si la lletra del DNI és correcta
+'''
+
+dni = input("Escriu el teu DNI complet sense espais i la lletra en majuscules:\n ")
+if not len(dni) == 9:
+    print ("El DNI ha de tenir 9 caràcters")
+
+print ("")
+
+
+codi= ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"]
+if len(dni) == 9:
+
+    #Separar el número de la lletra del DNI
+    numero=int(dni[0:8])
+    lletra=dni[8]
+
+    #Es la lletra correcta?
+    if lletra == codi[numero%23]:
+        print ("DNI correcte")
+    else:
+        print ("DNI incorrecte")
+        print ("")
+        print ("La lletra correcta hauria de ser: ", codi[numero%23])
+        print ("")
+        print ("El DNI correcte seria: ", str(numero) + codi[numero%23])
+     
+
 print ("")
