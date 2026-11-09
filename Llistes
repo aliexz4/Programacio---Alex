@@ -63,5 +63,13 @@ if len(dni) == 9:
         print ("")
         print ("El DNI correcte seria: ", str(numero) + codi[numero%23])
      
-
 print ("")
+
+#Funcio append
+print ("La llista és: ", llista)
+llista.append("Gat")
+print ("La llista és: ", llista)
+
+#Funcio insert
+llista.insert(1, "Gos")
+print ("Llista")
