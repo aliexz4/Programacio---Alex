@@ -1,1 +1,22 @@
+print ("")
 
+
+llista = []
+
+#Sense bucle
+llista.append(input("Escriu un nom: "))
+llista.append(input("Escriu un nom: "))
+llista.append(input("Escriu un nom: "))
+
+#Amb bucle
+for i in range(3):
+    llista.append(input("Escriu un nom: "))
+
+print ("")
+print ("Llista:", llista)
+
+#Bucle amb intervals concrets
+for i in range(17, 101):
+    if(i % 2 == 0):
+        print (i, end = " ")
+print ("\n")

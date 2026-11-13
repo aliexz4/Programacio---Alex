@@ -1,1 +1,7 @@
+print ("")
 
+compt = 0
+fi = False
+llista = []
+llista.append(int(input("Escriu un número: ")))
+llista.append(int(input("Escriu un altre número: ")))
