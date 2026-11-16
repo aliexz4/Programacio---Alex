@@ -3,20 +3,64 @@ print ("")
 
 llista = []
 
+
 #Sense bucle
+'''
 llista.append(input("Escriu un nom: "))
 llista.append(input("Escriu un nom: "))
 llista.append(input("Escriu un nom: "))
+'''
 
 #Amb bucle
 for i in range(3):
     llista.append(input("Escriu un nom: "))
-
-print ("")
 print ("Llista:", llista)
+print ("")
+
 
 #Bucle amb intervals concrets
+'''
 for i in range(17, 101):
     if(i % 2 == 0):
         print (i, end = " ")
 print ("\n")
+'''
+
+#Bucle en una llista (amb "a")
+compt = 0
+for i in llista[0]:
+    if(i == "a"):
+        compt += 1
+print("El primer nom de la llista és", llista[0], "i té", compt, "lletres 'a'")
+print ("\n")
+
+
+#Bucle de bucle amb elements
+print ("")
+notes = [[6,3,7,8,9],[10,7,6,7,7],[5,5,10,7,10]]
+compt = 0
+for i in notes:
+    for j in i:
+         if(j == 10):
+            compt += 1
+print("Hi ha ", compt, " 10 a programació")
+
+#Per veure l'ordre
+for i in range(len(llista)):
+    print("Els 10", llista[i], "està a la posició", i)
+
+# While: Bucle que funciona mentre es compleixi una condició (Escriu una cosa infinitament)
+
+#Adivinar un número del 1 al 10
+secret = random.randint(1, 10)
+intents = 0
+
+while True:
+    num = int(input("Adivina el número (1-10): "))
+    intents += 1
+
+    if num == secret:
+        print(f"Correcte, has endevinat el número en {intents} intents.")
+        break
+    else:
+        print("Incorrecte, torna-ho a provar.")

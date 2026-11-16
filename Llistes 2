@@ -1,7 +1,44 @@
 print ("")
 
-compt = 0
-fi = False
-llista = []
-llista.append(int(input("Escriu un número: ")))
-llista.append(int(input("Escriu un altre número: ")))
+numeros=[]
+
+#Ordenar el primer número
+num=int(input("Introdueix el primer número: "))
+numeros.append(num)
+
+
+#Ordenar el segon número
+num=int(input("Introdueix el segon número: "))
+if num<numeros[0]:
+    numeros.insert(0,num)
+else:
+    numeros.append(num)
+
+
+#Ordenar el tercer número
+num=int(input("Introdueix el tercer número: "))
+if num<numeros[0]:
+    numeros.insert(0,num)
+else:
+    if num<numeros[1]:
+        numeros.insert(1,num)
+    else:
+        numeros.append(num)
+
+
+#Ordenar el quart número
+num=int(input("Introdueix el quart número: "))
+if num<numeros[0]:
+    numeros.insert(0,num)
+else:
+    if num<numeros[1]:
+        numeros.insert(1,num)
+    else:
+        if num<numeros[2]:
+            numeros.insert(2,num)
+        else:
+            numeros.append(num)
+
+print("Els números ordenats són:", numeros)
+
+print ("")
