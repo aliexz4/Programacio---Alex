@@ -49,7 +49,7 @@ else: {
 
 #Simplificació de l'if
 '''
-if(suma>10): print("La seva suma és més gran que 10
+if(suma>10): print("La seva suma és més gran que 10)
 '''
 
 print("")

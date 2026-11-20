@@ -1,1 +1,21 @@
+print ("")
+import random
+#Generar un codi secret de 4 fitxes de 6 colors disponibles amb 10 intents
 
+#Variables
+intents = 10
+
+
+#Colors disponibles
+colors = ["V", "B", "G", "E", "T", "L"]
+noms = ["Vermell", "Blau", "Groc", "Verd", "Taronja", "Lila"]
+
+#Generar un codi secret aleatori
+codi_secret = []
+for i in range(4):
+    codi_secret.append(random.choice(colors))
+
+print ("Benvingut al joc del Mastermind!")
+print ("Tens 10 intents per endevinar el codi de 4 fitxes amb els colors:")
+for i in range(4):
+    print(f"{i+1}. {noms[i]}")
