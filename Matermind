@@ -4,18 +4,79 @@ import random
 
 #Variables
 intents = 10
+intent_ara = 1
+longitud = 4
 
-
-#Colors disponibles
+    #Colors disponibles
 colors = ["V", "B", "G", "E", "T", "L"]
 noms = ["Vermell", "Blau", "Groc", "Verd", "Taronja", "Lila"]
 
-#Generar un codi secret aleatori
-codi_secret = []
-for i in range(4):
-    codi_secret.append(random.choice(colors))
+#Generar el codi secret aleatori
+secret = []
+for i in range(longitud):
+    secret.append(random.choice(colors))
 
+print ("")
+
+#Instruccions del joc
 print ("Benvingut al joc del Mastermind!")
-print ("Tens 10 intents per endevinar el codi de 4 fitxes amb els colors:")
-for i in range(4):
-    print(f"{i+1}. {noms[i]}")
+print ("")
+print ("Objectiu: Endevina el codi secret de 4 colors (es poden repetir)")
+print ("Colors disponibles: V (Vermell), B (Blau), G (Groc), E (Verd), T (Taronja), L (Lila)")
+print ("Com jugar?: Escriu 4 lletres seguides sense espais (exemple: VVVV)")
+print("Les pistes són: 'X' (color i lloc correctes), 'O' (només color correcte) i '·' (color incorrecte)")
+print("Tens", intents, "intents per esbrinar el codi secret.")
+print ("\n")
+
+#Joc principal
+guanyat = False
+
+while intent_ara <= intents and not guanyat:
+    entrada = False
+
+#Mirar que estigui bé la jugada
+    while not entrada:
+        jugada = input(f"Intent {intent_ara} / {intents}: Introduix 4 colors (Mayuscules): ")
+if len(jugada) != longitud:
+    print("Incorrecte. Revisa que els colors introduïts siguin 4.")
+
+else:
+    entrada = True
+    for i in range(longitud):
+        if jugada[i] not in colors:
+            entrada = False
+            print("Incorrecte. Revisa que els colors introduïts siguin valids.")
+
+#Mirar que las pistas estiguin bé (X i O)
+        if entrada:
+            pista = ["·"] * longitud
+            secret_utilitzat = [False] * longitud
+            jugada_avaluada = [False] * longitud
+
+#La X
+            for i in range(longitud):
+                if jugada[i] == secret[i]:
+                    pista[i] = "X"
+                    secret_utilitzat[i] = True
+                    jugada_avaluada[i] = True
+#La O
+            for i in range(longitud):
+                if not jugada_avaluada[i]:
+                    for j in range(longitud):
+                        if not secret_utilitzat[j] and jugada[i] == secret[j]:
+                            pista[i] = "O"
+                            secret_utilitzat[j] = True
+                            break 
+                    #Break ho utilitzo per parar el bucle abans que termini. En aquest cas seria perquè ja has trobat el color correcte i no cal seguir buscant.
+
+            print("Jugada:", jugada, "Pista:", " ".join(pista))
+                #Join ho utilitzo per unir tot en un text i que no es quedi comes de per mig
+                if pista == ["X"] * longitud:
+                    guanyat = True
+                else:
+                    intent_ara += 1
+#Final del joc
+    if guanyat:
+        print("Molt be, Has endevinat el codi secret en", intent_ara, "intents")
+    else:
+        print("Ho sento has esgotat els intents. El codi secret era:", "".join(secret))
