@@ -37,15 +37,15 @@ while intent_ara <= intents and not guanyat:
 #Mirar que estigui bé la jugada
     while not entrada:
         jugada = input("Intent " + str(intent_ara) + " / " + str(intents) + ": Introduix 4 colors (Mayuscules): ")
-    if len(jugada) != longitud:
-        print("Incorrecte. Revisa que els colors introduïts siguin 4.")
+        if len(jugada) != longitud:
+            print("Incorrecte. Revisa que els colors introduïts siguin 4.")
 
-else:
-    entrada = True
-    for i in range(longitud):
-        if jugada[i] not in colors:
-            entrada = False
-            print("Incorrecte. Revisa que els colors introduïts siguin valids.")
+        else:
+            entrada = True
+            for i in range(longitud):
+                if jugada[i] not in colors:
+                    entrada = False
+                    print("Incorrecte. Revisa que els colors introduïts siguin valids.")
 
 #Mirar que las pistas estiguin bé (X i O)
         if entrada:
@@ -60,23 +60,24 @@ else:
                     secret_utilitzat[i] = True
                     jugada_avaluada[i] = True
 #La O
-for i in range(longitud):
-    if not jugada_avaluada[i]:
-        for j in range(longitud):
-            if not secret_utilitzat[j] and jugada[i] == secret[j]:
-                pista[i] = "O"
-                secret_utilitzat[j] = True
-                break 
-                #Break ho utilitzo per parar el bucle abans que termini. En aquest cas seria perquè ja has trobat el color correcte i no cal seguir buscant.
+            for i in range(longitud):
+                if not jugada_avaluada[i]:
+                    for j in range(longitud):
+                        if not secret_utilitzat[j] and jugada[i] == secret[j]:
+                            pista[i] = "O"
+                            secret_utilitzat[j] = True
+                            break 
+                            #Break ho utilitzo per parar el bucle abans que termini. En aquest cas seria perquè ja has trobat el color correcte i no cal seguir buscant.
 
-        print("Jugada:", jugada, "Pista:", " ".join(pista))
-            #Join ho utilitzo per unir tot en un text i que no es quedi comes de per mig
-        if pista == ["X"] * longitud:
-                    guanyat = True
-        else:
-                    intent_ara += 1
+            print("Jugada:", jugada, "Pista:", " ".join(pista))
+                #Join ho utilitzo per unir tot en un text i que no es quedi comes de per mig
+            if pista == ["X"] * longitud:
+                guanyat = True
+            else:
+                intent_ara += 1
+
 #Final del joc
-    if guanyat:
-        print("Molt be, Has endevinat el codi secret en", intent_ara, "intents")
-    else:
-        print("Ho sento has esgotat els intents. El codi secret era:", "".join(secret))
+if guanyat:
+    print("Molt be, Has endevinat el codi secret en", intent_ara, "intents")
+else:
+    print("Ho sento has esgotat els intents. El codi secret era:", "".join(secret))
